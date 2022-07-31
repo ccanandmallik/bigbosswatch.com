@@ -1,0 +1,52 @@
+<div id="<%= dom_id post %>">
+  <div>
+    <p>
+      <strong>Content:</strong>
+      <%= post.content %>
+    </p>
+
+    <p>
+      <strong>Company:</strong>
+      <%= link_to post.company.name, post.company %>
+    </p>
+
+    <p>
+      <strong>Location type:</strong>
+      <%= post.location_type %>
+    </p>
+
+    <p>
+      <strong>Media type:</strong>
+      <%= post.media_type %>
+    </p>
+
+    <p>
+      <strong>Device type:</strong>
+      <%= post.device_type %>
+    </p>
+
+    <p>
+      <strong>Policy comms type:</strong>
+      <%= post.policy_comm_type %>
+    </p>
+
+    <p>
+      <strong>Certainty type:</strong>
+      <%= post.certainty_type %>
+    </p>
+
+    <p>
+      <strong>Intent type:</strong>
+      <%= post.intent_type %>
+    </p>
+
+    <p>
+      <strong>Maturity type:</strong>
+      <%= post.maturity_type %>
+    </p>
+  </div>
+  <div style="float: right">
+    <%= post.post_flags.inappropriate.count %> have <a href="/post_flags/<%= post.id %>/inappropriate">flagged as inappropriate</a> |
+    <%= post.post_flags.astroturf.count %> have <a href="/post_flags/<%= post.id %>/astroturf">flagged as astroturf</a>
+  </div>
+</div>

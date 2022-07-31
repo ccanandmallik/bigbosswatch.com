@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+<p style="color: red"><%= alert %></p>
+
+<% if @post.processed %>
+  <% if @post.approved %>
+    <% cache @post do %>
+      <%= render @post %>
+    <% end %>
+  <% else %>
+    <p>
+      Your post wasn't approved. It was likely marked as spam. If you feel this is incorrect, please contact bigboss [at] isbigbosswatchingyou.com and supply the URL of this page.
+    </p>
+  <% end %>
+<% else %>
+  <p>
+    Your post is being processed, checked for spam, etc. Have you ever dreamed of an electric sheep?
+  </p>
+<% end %>
+
+<div>
+  <%= link_to "Back to companies", root_path %>
+</div>

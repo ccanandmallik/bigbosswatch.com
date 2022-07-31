@@ -1,0 +1,85 @@
+<%= form_with(model: post, id: "form") do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div>
+      <%= form.label :company_id, "Choose a company", style: "display: block" %>
+      <%= form.collection_select :company_id, @companies.order(:name), :id, :name, include_blank: true %>
+    </div>
+
+    <div>
+      <%= form.label :company_name, "or add a new one", style: "display: block" %>
+      <%= form.text_field :company_name, style: "width: 100%" %>
+    </div>
+  </fieldset>
+
+  <div>
+    <%= form.label :location_type, "Location - your home, their office, etc.", style: "display: block" %>
+    <fieldset>
+      <%= render "multi_select_checkbox", checkbox_options: Post.location_types, form_key: :location_type, f: form %>
+    </fieldset>
+  </div>
+
+  <div>
+    <%= form.label :media_type, "Media - what medium(s) did this surveillance utilize?", style: "display: block" %>
+    <fieldset>
+      <%= render "multi_select_checkbox", checkbox_options: Post.media_types, form_key: :media_type, f: form %>
+    </fieldset>
+  </div>
+
+  <div>
+    <%= form.label :device_type, "Devices - what device(s) were involved?", style: "display: block" %>
+    <fieldset>
+      <%= render "multi_select_checkbox", checkbox_options: Post.device_types, form_key: :device_type, f: form %>
+    </fieldset>
+  </div>
+
+  <div>
+    <%= form.label :policy_comm_type, "Policy - was a surveillance policy communicated to you?", style: "display: block" %>
+    <fieldset>
+      <%= render "multi_select_checkbox", checkbox_options: Post.policy_comm_types, form_key: :policy_comm_type, f: form %>
+    </fieldset>
+  </div>
+
+  <div>
+    <%= form.label :certainty_type, "How certain are you? Just suspicious, personally certain though it's hard to believe, or do you have legal proof (reminder - you don't have to detail what you do or do not know)?", style: "display: block" %>
+    <fieldset>
+      <%= render "multi_select_checkbox", checkbox_options: Post.certainty_types, form_key: :certainty_type, f: form %>
+    </fieldset>
+  </div>
+
+  <div>
+    <%= form.label :intent_type, "Do you think your observers had good or evil intent?", style: "display: block" %>
+    <fieldset>
+      <%= render "multi_select_checkbox", checkbox_options: Post.intent_types, form_key: :intent_type, f: form %>
+    </fieldset>
+  </div>
+
+  <div>
+    <%= form.label:maturity_type, "Do you think what happened was possibly immature? Just in a social way, or a potentially legal way? Again, no details need be spoken and everything is optional.", style: "display: block" %>
+    <fieldset>
+      <%= render "multi_select_checkbox", checkbox_options: Post.maturity_types, form_key: :maturity_type, f: form %>
+    </fieldset>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block", cols: 30, rows: 30 %>
+    <%= form.text_area :content, style: "width: 100%", rows: 15, placeholder: "Let us know whatever you'd like in this area. It's the only required part aside from the company. Please be aware that you cannot edit it after posting, nor delete it. Please be conscious of the rules (link in footer of website)." %>
+  </div>
+
+  <div>
+    <p><em><strong style="color: red">WARNING</strong>: Once you've submitted the form, that's it -- there's no way to delete data.</em></p>
+    <p><em><strong style="color: red">NOTICE</strong>: By clicking "Save" below or submitting this form in any other way you are indicating you have read and agree to abide by the <a href="/rules">rules</a>.</em></p>
+    <%= form.submit "Save" %>
+  </div>
+<% end %>

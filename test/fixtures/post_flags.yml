@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  post: one
+  flag_type: 1
+  user_ip: MyString
+  user_agent: MyString
+
+two:
+  post: two
+  flag_type: 1
+  user_ip: MyString
+  user_agent: MyString

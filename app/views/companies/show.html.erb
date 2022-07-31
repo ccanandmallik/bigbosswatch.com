@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @company %>
+
+<table>
+  <thead>
+    <th>
+      Summary
+    </th>
+    <th>
+      Created
+    </th>
+    <th>
+      Flagged
+    </th>
+  </thead>
+  <tbody>
+  <% @company.posts.latest.approved.page(params[:page]).each do |post| %>
+    <% cache post do %>
+      <tr>
+        <td>
+          <%= link_to post.content.truncate(100), post_path(post) %>
+        </td>
+        <td><%= post.created_at.to_formatted_s(:long_ordinal) %></td>
+        <td style="text-align: right"><%= post.post_flags.size %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @company.posts.approved.page(params[:page]) %>
+
+<div>
+  <%= link_to "Back to companies", root_path %>
+</div>

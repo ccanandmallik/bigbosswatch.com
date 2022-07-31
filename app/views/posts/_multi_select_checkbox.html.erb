@@ -1,0 +1,4 @@
+<% checkbox_options.each do |value| %>
+  <%= f.label value[0], for: "post_#{form_key}_#{value[0]}" %>
+  <%= f.check_box(form_key, { multiple: true, id: "post_#{form_key}_#{value[0]}", include_hidden: false }, value[0]) %>
+<% end %>

@@ -1,0 +1,46 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText for post one. It's a lot of text
+  user_ip: MyStringOne
+  user_agent: MyString
+  company: one
+  media_type: [1]
+  location_type: [1]
+  device_type: [1]
+  certainty_type: [1]
+  intent_type: [1]
+  maturity_type: [1]
+  policy_comm_type: [0]
+  approved: false
+  processed: false
+
+two:
+  content: MyText for post two. It's a bit of text as well! But it's spam!
+  user_ip: MyStringTwo
+  user_agent: MyString
+  company: two
+  media_type: [0,1]
+  location_type: [1]
+  device_type: [1]
+  certainty_type: [1]
+  intent_type: [1]
+  maturity_type: [1]
+  policy_comm_type: [0]
+  approved: false
+  processed: false
+
+three:
+  content: MyText for post three. It's a bit of text as well! But it's spam! Blatant spam!
+  user_ip: MyStringThree
+  user_agent: MyString
+  company: one
+  media_type: [0,1]
+  location_type: [1]
+  device_type: [1]
+  certainty_type: [1]
+  intent_type: [1]
+  maturity_type: [1]
+  policy_comm_type: [0]
+  approved: false
+  processed: false

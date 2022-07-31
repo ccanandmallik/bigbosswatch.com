@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ * require_tree .
+ *= require_self
+ */
+
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.page-header, .page-footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 16px;
+  background: lightYellow;
+}
+.page-header {
+  padding-top: 0;
+}
+.page-footer {
+    font-size: 12px;
+}
+.page-body {
+  flex-grow: 1;
+  padding: 0 16px 16px;
+}
+a:visited, a {
+    color: darkBlue;
+}
+a.coin {
+    color: green;
+}
+dd, dt, li {
+    margin-right: 40px;
+}
+.match-dt {
+    margin-left: 40px;
+}
+dt {
+    margin-inline-start: 40px;
+    font-weight: bold;
+    padding-top: 16px;
+}
+dt:first-child {
+    padding-top: 0;
+}
+li, dt, td {
+    padding-bottom: 16px;
+}
+form fieldset {
+    margin: 10px 0 16px;
+}

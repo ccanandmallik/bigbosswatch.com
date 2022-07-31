@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<%= form_tag(root_path, method: :get) do %>
+  <%= text_field_tag(:name, params[:name]) %>
+  <%= submit_tag "Search by company name" %>
+  ... <%= link_to "or create a new post", new_post_path %>
+<% end %>
+
+<div id="companies">
+  <ol>
+  <% @companies.each do |company| %>
+    <% cache company do %>
+      <li>
+        <%= link_to "#{company.name} (#{company.posts.approved.size} posts)", company %>
+      </li>
+    <% end %>
+  <% end %>
+  </ol>
+</div>
+
+<%= link_to "Create a new post", new_post_path %>
+<hr />
+
+<%= paginate @companies %>
