@@ -3,8 +3,8 @@
 # Load the Rails application.
 require_relative 'application'
 
-Akismet.api_key = 'fsdfsdf'
-Akismet.app_url = 'https://test'
-
 # Initialize the Rails application.
 Rails.application.initialize!
+
+Akismet.api_key = ENV['ASKIMET_API_KEY']
+Akismet.app_url = ENV['ASKIMET_APP_URL']
