@@ -42,7 +42,7 @@ class Post < ApplicationRecord
 
   array_enum intent_type: {
     benevolent: 0,
-    maleovelant: 1,
+    malevolent: 1,
     unknown: 2
   }
 
