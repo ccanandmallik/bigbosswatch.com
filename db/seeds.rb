@@ -15,7 +15,7 @@ initek = Company.create(name: 'Initek')
 Post.find_or_create_by(
   company: initek,
   location_type: %i[office],
-  media_type: %i[other, audio],
+  media_type: %i[other audio],
   device_type: %i[other],
   certainty_type: %i[personal],
   policy_comm_type: %i[unknown],
