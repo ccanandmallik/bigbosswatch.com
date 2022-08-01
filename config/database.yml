@@ -1,12 +1,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV.fetch("USER") %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
+  username: <%= ENV.fetch("USER") { '' } %>
   database: bigboss/development
 
 test:
@@ -15,5 +15,7 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['POSTGRES_DB'] %>
+  database: myapp
+  username: myapp
+  password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
 
