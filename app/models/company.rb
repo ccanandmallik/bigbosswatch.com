@@ -4,7 +4,7 @@
 class Company < ApplicationRecord
   has_many :posts
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validate :profanity
 
   def self.get_frontpage_listings(name, page)
