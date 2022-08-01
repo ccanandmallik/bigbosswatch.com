@@ -11,6 +11,11 @@
     </p>
 
     <p>
+      <strong>Created:</strong>
+      <%= post.created_at.to_formatted_s(:long_ordinal) %>
+    </p>
+
+    <p>
       <strong>Location type:</strong>
       <%= post.location_type %>
     </p>
