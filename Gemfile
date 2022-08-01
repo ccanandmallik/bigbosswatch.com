@@ -65,8 +65,6 @@ group :development do
 
   gem 'rubocop'
 
-  gem 'net-http', '~> 0.2.2'
-
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -90,3 +88,7 @@ gem 'akismet', '~> 3.0'
 gem 'kaminari', '~> 1.2'
 
 gem 'profanity_filter', '~> 0.1.1'
+
+gem 'net-http', '~> 0.2.2'
+
+gem 'rails_autoscale_agent'
