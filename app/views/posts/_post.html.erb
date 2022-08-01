@@ -2,7 +2,7 @@
   <div>
     <p>
       <strong>Content:</strong>
-      <%= post.content %>
+      <%= sanitize post.content, tags: %w(br) %>
     </p>
 
     <p>
